@@ -25,13 +25,12 @@ return {
       tsserver = {
         filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
       },
-      liquid = {
-        cmd = { "shopify", "theme", "language-server" },
-        filetypes = { "liquid" },
-        root_dir = function()
-          return vim.fn.getcwd()
-        end,
+
+      dartls = {
+        cmd = { "dart", "language-server", "--protocol=lsp" },
+        filetypes = { "dart" },
       },
+
     }
 
     for name, opts in pairs(servers) do
