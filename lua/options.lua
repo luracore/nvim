@@ -94,3 +94,20 @@ vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], {
   silent = true,
 })
 
+-- Format
+vim.keymap.set("n", "<leader>=", function()
+  local has_formatter = false
+
+  for _, client in ipairs(vim.lsp.get_clients({ bufnr = 0 })) do
+    if client:supports_method("textDocument/formatting") then
+      has_formatter = true
+      break
+    end
+  end
+
+  if has_formatter then
+    vim.lsp.buf.format()
+  else
+    vim.cmd("normal! gg=G")
+  end
+end, { desc = "Formatar arquivo" })
