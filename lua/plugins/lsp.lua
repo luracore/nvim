@@ -47,9 +47,13 @@ return {
       },
       html = {},
       cssls = {},
+
+
       ts_ls = {
+        cmd = { "npx", "--yes", "-p", "typescript", "-p", "typescript-language-server", "typescript-language-server", "--stdio" },
         filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
       },
+
       dartls = {
         cmd = { "dart", "language-server", "--protocol=lsp" },
         filetypes = { "dart" },
