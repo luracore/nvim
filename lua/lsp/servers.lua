@@ -14,8 +14,12 @@ return {
     },
 
     html = {},
-    cssls = {},
+    cssls = {
+      filetypes = { "css", "scss", "less", "rasi" },
+    },
     ts_ls = {},
+
+    bashls = {},
   },
 
   system = {
